@@ -1,5 +1,6 @@
 module Data.Composition.Functor where
 
+
 (<$$>) :: (Functor f0, Functor f1) =>
           (a -> b)
        -> f1 (f0 a)

@@ -1,6 +1,6 @@
 name:                composition-extra
 version:             0.0.0.1
-synopsis:            Combinators for unorthodox term composition
+synopsis:            Combinators for unorthodox structure composition
 
 license:             BSD3
 license-file:        LICENSE
@@ -17,6 +17,7 @@ library
                        Data.Composition.Contravariant
                        Data.Composition.Monad
   build-depends:       base >= 4.6 && < 5
+                     , contravariant
 
 source-repository head
   type:     git
