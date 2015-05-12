@@ -1,4 +1,4 @@
-module Data.Composition.Contravariant where
+module Data.Function.Contravariant.Composition where
 
 (-.) :: (a -> b) -> (b -> c) -> a -> c
 (-.) g f a = f $ g a

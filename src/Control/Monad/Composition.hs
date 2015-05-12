@@ -1,4 +1,4 @@
-module Data.Composition.Monad where
+module Control.Monad.Composition where
 
 (>>==) :: Monad m =>
           m b

@@ -1,4 +1,4 @@
-module Data.Composition.Functor where
+module Data.Functor.Composition where
 
 
 (<$$>) :: (Functor f0, Functor f1) =>
