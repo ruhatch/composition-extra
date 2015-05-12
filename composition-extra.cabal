@@ -1,0 +1,22 @@
+name:                composition-extra
+version:             0.0.0.1
+synopsis:            Combinators for unorthodox term composition
+
+license:             BSD3
+license-file:        LICENSE
+author:              Athan Clark
+maintainer:          athan.clark@gmail.com
+
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Data.Composition.Functor
+                       Data.Composition.Contravariant
+  build-depends:       base >= 4.6 && < 5
+
+source-repository head
+  type:     git
+  location: git://github.com/athanclark/composition-extra.git
