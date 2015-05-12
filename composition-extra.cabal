@@ -15,6 +15,7 @@ library
   hs-source-dirs:      src
   exposed-modules:     Data.Composition.Functor
                        Data.Composition.Contravariant
+                       Data.Composition.Monad
   build-depends:       base >= 4.6 && < 5
 
 source-repository head

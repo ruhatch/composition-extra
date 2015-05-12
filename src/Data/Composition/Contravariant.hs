@@ -1,6 +1,5 @@
 module Data.Composition.Contravariant where
 
-
 (-.) :: (a -> b) -> (b -> c) -> a -> c
 (-.) g f a = f $ g a
 
