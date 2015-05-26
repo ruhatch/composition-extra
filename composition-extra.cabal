@@ -1,5 +1,5 @@
 name:                composition-extra
-version:             0.0.0.1
+version:             0.1.0
 synopsis:            Combinators for unorthodox structure composition
 
 license:             BSD3

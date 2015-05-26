@@ -31,32 +31,22 @@ module Control.Monad.Composition where
 (>>======) mf f a b c d e = f a b c d e =<< mf
 
 
-(==<<) :: Monad m =>
-          (a -> b -> m c)
-       -> m b
-       -> a -> m c
-(==<<) = flip (>>==)
 
-(===<<) :: Monad m =>
-           (a -> b -> c -> m d)
-        -> m c
-        -> a -> b -> m d
-(===<<) = flip (>>===)
 
 (====<<) :: Monad m =>
             (a -> b -> c -> d -> m e)
-         -> m d
-         -> a -> b -> c -> m e
-(====<<) = flip (>>====)
+         -> m a
+         -> b -> c -> d -> m e
+(====<<) mf x b c d = x >>= (\a -> mf a b c d)
 
 (=====<<) :: Monad m =>
              (a -> b -> c -> d -> e -> m f)
-          -> m e
-          -> a -> b -> c -> d -> m f
-(=====<<) = flip (>>=====)
+          -> m a
+          -> b -> c -> d -> e -> m f
+(=====<<) mf x b c d e = x >>= (\a -> mf a b c d e)
 
 (======<<) :: Monad m =>
               (a -> b -> c -> d -> e -> f -> m g)
-           -> m f
-           -> a -> b -> c -> d -> e -> m g
-(======<<) = flip (>>======)
+           -> m a
+           -> b -> c -> d -> e -> f -> m g
+(======<<) mf x b c d e f = x >>= (\a -> mf a b c d e f)
