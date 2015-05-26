@@ -13,7 +13,7 @@ module Control.Monad.Composition.Three where
         -> a -> c -> m d
 (=.=<<) mf inp a c = inp >>= (\b -> mf a b c)
 
-(=.=<<) :: Monad m =>
+(==.<<) :: Monad m =>
            (a -> b -> c -> m d)
         -> m c
         -> a -> b -> m d

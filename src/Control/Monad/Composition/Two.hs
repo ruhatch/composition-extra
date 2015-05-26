@@ -1,13 +1,13 @@
-module Control.Composition.Two where
+module Control.Monad.Composition.Two where
 
 (==<<) :: Monad m =>
           (a -> b -> m c)
        -> m a
        -> b -> m c
-(==<<) mf inp b = x >>= (`mf` b)
+(==<<) mf x b = x >>= (`mf` b)
 
 (=.<<) :: Monad m =>
-          (a -> b -> mc)
+          (a -> b -> m c)
        -> m b
        -> a -> m c
-(=.<<) mf inp a = mf a =<< inp
+(=.<<) mf x a = mf a =<< x
