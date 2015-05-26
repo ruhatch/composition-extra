@@ -7,7 +7,7 @@ module Control.Monad.Composition.Three where
         -> b -> c -> m d
 (===<<) mf inp b c = inp >>= (\a -> mf a b c)
 
-infixr 1 ===<<
+infixl 1 ===<<
 
 (=.=<<) :: Monad m =>
            (a -> b -> c -> m d)
@@ -15,7 +15,7 @@ infixr 1 ===<<
         -> a -> c -> m d
 (=.=<<) mf inp a c = inp >>= (\b -> mf a b c)
 
-infixr 1 =.=<<
+infixl 1 =.=<<
 
 (==.<<) :: Monad m =>
            (a -> b -> c -> m d)
@@ -23,4 +23,4 @@ infixr 1 =.=<<
         -> a -> b -> m d
 (==.<<) mf inp a b = inp >>= mf a b
 
-infixr 1 ==.<<
+infixl 1 ==.<<

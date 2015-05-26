@@ -6,7 +6,7 @@ module Control.Monad.Composition.Two where
        -> b -> m c
 (==<<) mf x b = x >>= (`mf` b)
 
-infixr 1 ==<<
+infixl 1 ==<<
 
 (=.<<) :: Monad m =>
           (a -> b -> m c)
@@ -14,4 +14,4 @@ infixr 1 ==<<
        -> a -> m c
 (=.<<) mf x a = mf a =<< x
 
-infixr 1 =.<<
+infixl 1 =.<<

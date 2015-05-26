@@ -21,7 +21,7 @@ import Control.Monad.Composition.Six as X
        -> a -> m c
 (>>==) mb f a = f a =<< mb
 
-infixl 1 >>==
+infixr 2 >>==
 
 (>>===) :: Monad m =>
            m c
@@ -29,7 +29,7 @@ infixl 1 >>==
         -> a -> b -> m d
 (>>===) mc f a b = f a b =<< mc
 
-infixl 1 >>===
+infixr 2 >>===
 
 (>>====) :: Monad m =>
             m d
@@ -37,7 +37,7 @@ infixl 1 >>===
          -> a -> b -> c -> m e
 (>>====) md f a b c = f a b c =<< md
 
-infixl 1 >>====
+infixr 2 >>====
 
 (>>=====) :: Monad m =>
              m e
@@ -45,7 +45,7 @@ infixl 1 >>====
           -> a -> b -> c -> d -> m f
 (>>=====) me f a b c d = f a b c d =<< me
 
-infixl 1 >>=====
+infixr 2 >>=====
 
 (>>======) :: Monad m =>
               m f
@@ -53,4 +53,4 @@ infixl 1 >>=====
            -> a -> b -> c -> d -> e -> m g
 (>>======) mf f a b c d e = f a b c d e =<< mf
 
-infixl 1 >>======
+infixr 2 >>======
