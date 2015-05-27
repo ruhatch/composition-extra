@@ -1,4 +1,4 @@
-module Control.Monad.Composition.Six where
+module Control.Monad.Syntax.Six where
 
 
 (======<<) :: Monad m =>

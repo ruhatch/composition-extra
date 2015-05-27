@@ -1,4 +1,4 @@
-module Control.Monad.Composition.Four where
+module Control.Monad.Syntax.Four where
 
 
 (====<<) :: Monad m =>

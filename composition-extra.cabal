@@ -13,10 +13,10 @@ cabal-version:       >=1.8
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Data.Functor.Composition
-                       Data.Functor.Contravariant.Composition
-                       Data.Function.Contravariant.Composition
-                       Control.Monad.Composition
+  exposed-modules:     Data.Functor.Syntax
+                       Data.Functor.Contravariant.Syntax
+                       Data.Function.Contravariant.Syntax
+                       Control.Monad.Syntax
   build-depends:       base >= 4.6 && < 5
                      , contravariant
 

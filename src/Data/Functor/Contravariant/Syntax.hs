@@ -1,4 +1,4 @@
-module Data.Functor.Contravariant.Composition where
+module Data.Functor.Contravariant.Syntax where
 
 import Data.Functor.Contravariant
 

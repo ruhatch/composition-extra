@@ -1,4 +1,4 @@
-module Control.Monad.Composition.Two where
+module Control.Monad.Syntax.Two where
 
 (==<<) :: Monad m =>
           (a -> b -> m c)

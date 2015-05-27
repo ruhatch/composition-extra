@@ -1,4 +1,4 @@
-module Control.Monad.Composition.Five where
+module Control.Monad.Syntax.Five where
 
 
 (=====<<) :: Monad m =>

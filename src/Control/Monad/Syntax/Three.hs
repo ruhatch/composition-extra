@@ -1,4 +1,4 @@
-module Control.Monad.Composition.Three where
+module Control.Monad.Syntax.Three where
 
 
 (===<<) :: Monad m =>

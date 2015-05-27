@@ -1,4 +1,4 @@
-module Control.Monad.Composition
+module Control.Monad.Syntax
   ( module X
   , (>>==)
   , (>>===)
@@ -7,11 +7,11 @@ module Control.Monad.Composition
   , (>>======)
   ) where
 
-import Control.Monad.Composition.Two as X
-import Control.Monad.Composition.Three as X
-import Control.Monad.Composition.Four as X
-import Control.Monad.Composition.Five as X
-import Control.Monad.Composition.Six as X
+import Control.Monad.Syntax.Two as X
+import Control.Monad.Syntax.Three as X
+import Control.Monad.Syntax.Four as X
+import Control.Monad.Syntax.Five as X
+import Control.Monad.Syntax.Six as X
 
 
 

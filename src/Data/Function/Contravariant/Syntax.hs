@@ -1,4 +1,4 @@
-module Data.Function.Contravariant.Composition where
+module Data.Function.Contravariant.Syntax where
 
 (-.) :: (a -> b)
      -> (b -> c)
