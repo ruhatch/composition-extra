@@ -34,14 +34,14 @@ You can slyly prepend unanry functions to arbitrary arguments (contravariant fun
 compositon):
 
 ```haskell
-before :: q -> d
+before :: [q] -> d
 func2 :: c -> d -> e
 func3 :: b -> c -> d -> e
 func4 :: a -> b -> c -> d -> e
 
-before -.* func2 :: c -> q -> e
-before -.** func3 :: b -> c -> q -> e
-before -.*** func4 :: a -> b -> c -> q -> e
+before -.* func2 :: c -> [q] -> e
+before -.** func3 :: b -> c -> [q] -> e
+before -.*** func4 :: a -> b -> c -> [q] -> e
 ```
 
 ## Monads
