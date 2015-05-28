@@ -1,5 +1,5 @@
 name:                composition-extra
-version:             1.0.0
+version:             1.0.0.1
 synopsis:            Combinators for unorthodox structure composition
 
 license:             BSD3
@@ -17,6 +17,11 @@ library
                        Data.Functor.Contravariant.Syntax
                        Data.Function.Contravariant.Syntax
                        Control.Monad.Syntax
+                       Control.Monad.Syntax.Two
+                       Control.Monad.Syntax.Three
+                       Control.Monad.Syntax.Four
+                       Control.Monad.Syntax.Five
+                       Control.Monad.Syntax.Six
   build-depends:       base >= 4.6 && < 5
                      , contravariant
 
