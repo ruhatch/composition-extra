@@ -1,5 +1,5 @@
 name:                composition-extra
-version:             1.0.1.1
+version:             1.1.0
 synopsis:            Combinators for unorthodox structure composition
 
 license:             BSD3
@@ -16,6 +16,8 @@ library
   exposed-modules:     Data.Functor.Syntax
                        Data.Functor.Contravariant.Syntax
                        Data.Function.Contravariant.Syntax
+                       Data.Function.Syntax
+                       Data.Function.Apply
                        Data.Function.Flip
                        Data.Function.Slip
                        Data.Function.Twist
