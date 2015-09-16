@@ -13,14 +13,13 @@ cabal-version:       >=1.8
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Data.Functor.Syntax
-                       Data.Functor.Contravariant.Syntax
+  exposed-modules:     Data.Function.Syntax
                        Data.Function.Contravariant.Syntax
-                       Data.Function.Syntax
                        Data.Function.Apply
                        Data.Function.Flip
                        Data.Function.Slip
                        Data.Function.Twist
+                       Data.Functor.Syntax
                        Control.Monad.Syntax
                        Control.Monad.Syntax.Two
                        Control.Monad.Syntax.Three

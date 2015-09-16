@@ -1,7 +1,6 @@
 module Data.Functor.Syntax where
 
-import Data.Composition
-import Data.Function.Apply
+import Data.Function.Syntax
 
 
 -- * Nested Mapping
@@ -40,113 +39,119 @@ infixr 8 <$$$$$>
 
 -- * Nested Application
 
-(<~$>) :: Functor f0 =>
+(<$~>) :: Functor f0 =>
           f0 (a -> b)
        -> a -> f0 b
-(<~$>) f x = fmap ($ x) f
+(<$~>) f x = fmap ($ x) f
 
-infixl 8 <~$>
+infixl 8 <$~>
 
-(<~~$>) :: Functor f0 =>
+(<-$>) :: Functor f0 =>
+          (a -> b -> c)
+       -> f0 b
+       -> f0 (a -> c)
+(<-$>) = fmap ()
+
+(<$~~>) :: Functor f0 =>
           f0 (a -> b -> c)
        -> b -> f0 (a -> c)
-(<~~$>) f x = fmap (-$ x) f
+(<$~~>) f x = fmap (-$ x) f
 
-infixl 8 <~~$>
+infixl 8 <$~~>
 
-(<~~~$>) :: Functor f0 =>
+(<$~~~>) :: Functor f0 =>
           f0 (a -> b -> c -> d)
        -> c -> f0 (a -> b -> d)
-(<~~~$>) f x = fmap (--$ x) f
+(<$~~~>) f x = fmap (--$ x) f
 
-infixl 8 <~~~$>
+infixl 8 <$~~~>
 
-(<~$$>) :: (Functor f0, Functor f1) =>
+(<$~$>) :: (Functor f0, Functor f1) =>
            f1 (f0 (a -> b))
         -> a -> f1 (f0 b)
-(<~$$>) f x = fmap (<~$> x) f
+(<$~$>) f x = fmap (<$~> x) f
 
-infixl 8 <~$$>
+infixl 8 <$~$>
 
-(<~~$$>) :: (Functor f0, Functor f1) =>
+(<$~$~>) :: (Functor f0, Functor f1) =>
             f1 (f0 (a -> b -> c))
          -> b -> f1 (f0 (a -> c))
-(<~~$$>) f x = fmap (<~~$> x) f
+(<$~$~>) f x = fmap (<$~~> x) f
 
-infixl 8 <~~$$>
+infixl 8 <$~$~>
 
-(<~~~$$>) :: (Functor f0, Functor f1) =>
+(<$~~$~>) :: (Functor f0, Functor f1) =>
              f1 (f0 (a -> b -> c -> d))
           -> c -> f1 (f0 (a -> b -> d))
-(<~~~$$>) f x = fmap (<~~~$> x) f
+(<$~~$~>) f x = fmap (<$~~~> x) f
 
-infixl 8 <~~~$$>
+infixl 8 <$~~$~>
 
 
-(<~$$$>) :: (Functor f0, Functor f1, Functor f2) =>
+(<$~$$>) :: (Functor f0, Functor f1, Functor f2) =>
             f2 (f1 (f0 (a -> b)))
          -> a -> f2 (f1 (f0 b))
-(<~$$$>) f x = fmap (<~$$> x) f
+(<$~$$>) f x = fmap (<$~$> x) f
 
-infixl 8 <~$$$>
+infixl 8 <$~$$>
 
-(<~~$$$>) :: (Functor f0, Functor f1, Functor f2) =>
+(<$~$~$>) :: (Functor f0, Functor f1, Functor f2) =>
             f2 (f1 (f0 (a -> b -> c)))
          -> b -> f2 (f1 (f0 (a -> c)))
-(<~~$$$>) f x = fmap (<~~$$> x) f
+(<$~$~$>) f x = fmap (<$~$~> x) f
 
-infixl 8 <~~$$$>
+infixl 8 <$~$~$>
 
-(<~~~$$$>) :: (Functor f0, Functor f1, Functor f2) =>
+(<$~~$~$>) :: (Functor f0, Functor f1, Functor f2) =>
              f2 (f1 (f0 (a -> b -> c -> d)))
           -> c -> f2 (f1 (f0 (a -> b -> d)))
-(<~~~$$$>) f x = fmap (<~~~$$> x) f
+(<$~~$~$>) f x = fmap (<$~~$~> x) f
 
-infixl 8 <~~~$$$>
+infixl 8 <$~~$~$>
 
 
-(<~$$$$>) :: (Functor f0, Functor f1, Functor f2, Functor f3) =>
+(<$~$$$>) :: (Functor f0, Functor f1, Functor f2, Functor f3) =>
              f3 (f2 (f1 (f0 (a -> b))))
           -> a -> f3 (f2 (f1 (f0 b)))
-(<~$$$$>) f x = fmap (<~$$$> x) f
+(<$~$$$>) f x = fmap (<$~$$> x) f
 
-infixl 8 <~$$$$>
+infixl 8 <$~$$$>
 
-(<~~$$$$>) :: (Functor f0, Functor f1, Functor f2, Functor f3) =>
+(<$~$~$$>) :: (Functor f0, Functor f1, Functor f2, Functor f3) =>
             f3 (f2 (f1 (f0 (a -> b -> c))))
          -> b -> f3 (f2 (f1 (f0 (a -> c))))
-(<~~$$$$>) f x = fmap (<~~$$$> x) f
+(<$~$~$$>) f x = fmap (<$~$~$> x) f
 
-infixl 8 <~~$$$$>
+infixl 8 <$~$~$$>
 
-(<~~~$$$$>) :: (Functor f0, Functor f1, Functor f2, Functor f3) =>
+(<$~~$~$$>) :: (Functor f0, Functor f1, Functor f2, Functor f3) =>
              f3 (f2 (f1 (f0 (a -> b -> c -> d))))
           -> c -> f3 (f2 (f1 (f0 (a -> b -> d))))
-(<~~~$$$$>) f x = fmap (<~~~$$$> x) f
+(<$~~$~$$>) f x = fmap (<$~~$~$> x) f
 
-infixl 8 <~~~$$$$>
+infixl 8 <$~~$~$$>
 
 
-(<~$$$$$>) :: (Functor f0, Functor f1, Functor f2, Functor f3, Functor f4) =>
+(<$~$$$$>) :: (Functor f0, Functor f1, Functor f2, Functor f3, Functor f4) =>
              f4 (f3 (f2 (f1 (f0 (a -> b)))))
           -> a -> f4 (f3 (f2 (f1 (f0 b))))
-(<~$$$$$>) f x = fmap (<~$$$$> x) f
+(<$~$$$$>) f x = fmap (<$~$$$> x) f
 
-infixl 8 <~$$$$$>
+infixl 8 <$~$$$$>
 
-(<~~$$$$$>) :: (Functor f0, Functor f1, Functor f2, Functor f3, Functor f4) =>
+(<$~$~$$$>) :: (Functor f0, Functor f1, Functor f2, Functor f3, Functor f4) =>
             f4 (f3 (f2 (f1 (f0 (a -> b -> c)))))
          -> b -> f4 (f3 (f2 (f1 (f0 (a -> c)))))
-(<~~$$$$$>) f x = fmap (<~~$$$$> x) f
+(<$~$~$$$>) f x = fmap (<$~$~$$> x) f
 
-infixl 8 <~~$$$$$>
+infixl 8 <$~$~$$$>
 
-(<~~~$$$$$>) :: (Functor f0, Functor f1, Functor f2, Functor f3, Functor f4) =>
+(<$~~$~$$$>) :: (Functor f0, Functor f1, Functor f2, Functor f3, Functor f4) =>
              f4 (f3 (f2 (f1 (f0 (a -> b -> c -> d)))))
           -> c -> f4 (f3 (f2 (f1 (f0 (a -> b -> d)))))
-(<~~~$$$$$>) f x = fmap (<~~~$$$$> x) f
+(<$~~$~$$$>) f x = fmap (<$~~$~$$> x) f
 
-infixl 8 <~~~$$$$$>
+infixl 8 <$~~$~$$$>
 
 
 -- * Nested Compositon
@@ -166,6 +171,14 @@ infixr 8 <.$>
 f <.*$> g = fmap (f .*) g
 
 infixr 8 <.*$>
+
+(<*.$>) :: Functor f0 =>
+           (a -> c -> d)
+        -> f0 (b -> c)
+        -> f0 (a -> b -> d)
+f <*.$> g = fmap (f *.) g
+
+infixr 8 <*.$>
 
 (<.**$>) :: Functor f0 =>
            (d -> e)
