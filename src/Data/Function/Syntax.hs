@@ -1,5 +1,13 @@
 module Data.Function.Syntax
   ( module X
+  , (*.)
+  , (**.)
+  , (***.)
+  , (****.)
+  , (*****.)
+  , (******.)
+  , (*******.)
+  , (********.)
   ) where
 
 import Data.Composition as X
