@@ -15,3 +15,12 @@ infixl 1 ==<<
 (=.<<) mf x a = mf a =<< x
 
 infixl 1 =.<<
+
+(>>.=)
+  :: Monad m
+  => m a
+  -> (a -> b -> m c)
+  -> b -> m c
+(>>.=) x mf b = flip mf b =<< x
+
+infixr 2 >>.=
